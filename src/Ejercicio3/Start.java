@@ -14,11 +14,13 @@ public class Start {
 		termometro.addTemp(5);
 		termometro.addTemp(34);
 		termometro.addTemp(13);
-		termometro.addTemp(0);
+		
 		
 		
 		
 		System.out.println(termometro);
+		System.out.println(termometro.buscar(5));
+		
 	}
 
 }
