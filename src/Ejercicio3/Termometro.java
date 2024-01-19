@@ -1,49 +1,53 @@
 package Ejercicio3;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Termometro {
 	
-	private int semana[];
+	
+	
+	private int temperaturas[];
 	private int contador;
+	
 	
 	public Termometro() {
 		
 		contador = 0;
-		semana = new int[7];
+		temperaturas = new int[7];
 	}
 	
 	
 	
-	public void addTemp(int temperatura) {
+	public void addTemp(int valor) {
 		
-		semana[contador] = temperatura;
+		temperaturas[contador] = valor;
 		contador++;
 		
-		if(contador==semana.length) {
+		if(contador==temperaturas.length) {
 			contador=0;
 		}
 	}
 	
-	public int buscarUltimo(int temperatura) {
+	public int buscarUltimo(int valor) {
 		
 		int posicion = -1;
-		for (int i = 0; i < semana.length; i++) {
+		for (int i = 0; i < temperaturas.length; i++) {
 			
-			if(semana[i]==temperatura) {
+			if(temperaturas[i]==valor) {
 				posicion= i;
 			}
 		}
 		return posicion;
 	}
 	
-	public int buscarPrimero(int temperatura) {
+	public int buscarPrimero(int valor) {
 		int posicion = -1;
 		int i =0;
 		boolean encontrado = false;
-		while((i<semana.length) && (!encontrado)) {
+		while((i<temperaturas.length) && (!encontrado)) {
 			
-			if(semana[i]==temperatura) {
+			if(temperaturas[i]==valor) {
 				posicion = i;
 				encontrado = true;
 			}
@@ -55,11 +59,26 @@ public class Termometro {
 	}
 		
 	
+	public float getTemperaturaDia(char dia) {
+		
+		switch(dia) {
+			
+		case 'L','l': return temperaturas[0];
+		case 'M','m': return temperaturas[1];
+		case 'X','x': return temperaturas[2];
+		case 'J','j': return temperaturas[3];
+		case 'V','v': return temperaturas[4];
+		case 'S','s': return temperaturas[5];
+		case 'D','d': return temperaturas[6];
+		default: return temperaturas[0];
+		}
+	}
+	
 	
 	
 	
 	public String toString() {
-		return Arrays.toString(semana);
+		return Arrays.toString(temperaturas);
 	}
 	
 	

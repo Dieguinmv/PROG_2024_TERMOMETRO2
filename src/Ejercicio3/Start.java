@@ -21,6 +21,7 @@ public class Start {
 		System.out.println(termometro);
 		System.out.println(termometro.buscarPrimero(22));
 		System.out.println(termometro.buscarUltimo(5));
+		System.out.println(termometro.getTemperaturaDia('m'));
 	}
 
 }
