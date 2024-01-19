@@ -25,7 +25,7 @@ public class Termometro {
 		}
 	}
 	
-	public int buscar(int temperatura) {
+	public int buscarUltimo(int temperatura) {
 		
 		int posicion = -1;
 		for (int i = 0; i < semana.length; i++) {
@@ -36,6 +36,28 @@ public class Termometro {
 		}
 		return posicion;
 	}
+	
+	public int buscarPrimero(int temperatura) {
+		int posicion = -1;
+		int i =0;
+		boolean encontrado = false;
+		while((i<semana.length) && (!encontrado)) {
+			
+			if(semana[i]==temperatura) {
+				posicion = i;
+				encontrado = true;
+			}
+			
+			i++;
+		}
+		
+		return posicion;
+	}
+		
+	
+	
+	
+	
 	public String toString() {
 		return Arrays.toString(semana);
 	}

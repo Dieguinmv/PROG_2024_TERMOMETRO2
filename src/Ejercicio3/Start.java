@@ -8,7 +8,7 @@ public class Start {
 		Termometro termometro = new Termometro();
 		
 		termometro.addTemp(20);
-		termometro.addTemp(10);
+		termometro.addTemp(22);
 		termometro.addTemp(15);
 		termometro.addTemp(-23);
 		termometro.addTemp(5);
@@ -19,8 +19,8 @@ public class Start {
 		
 		
 		System.out.println(termometro);
-		System.out.println(termometro.buscar(5));
-		
+		System.out.println(termometro.buscarPrimero(22));
+		System.out.println(termometro.buscarUltimo(5));
 	}
 
 }
